@@ -1,0 +1,146 @@
+/* src/components/Navbar.css */
+body {
+  background-color: #f9fafb;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+header {
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 16px 0;
+}
+
+header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Navbar Styles */
+nav {
+  display: flex;
+  gap: 16px;
+}
+
+nav a {
+  color: #4a4a4a;
+  text-decoration: none;
+}
+
+nav button {
+  background-color: #3b82f6;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+}
+
+/* Navbar.css */
+a {
+  text-decoration: none;   /* Remove the underline */
+  color: inherit;          /* Make the link color inherit from the parent text */
+  cursor: default;         /* Optional: to make the cursor look like regular text */
+}
+
+.navbar .nav-link {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 5px 10px;
+  cursor: default;         /* To make the cursor a normal text cursor */
+  transition: color 0.3s;
+}
+
+/* Optional hover effect */
+.navbar .nav-link:hover {
+  color: inherit;          /* Keep the text color same on hover */
+}
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f0f0f0; /* Light Gray Background */
+    border-radius: 10px; /* Rounded corners */
+    margin: 10px;
+    border: 1px solid black; /* Thin black border */
+  }
+  
+  .navbar-left .website-name {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .navbar-center {
+    
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .get-started-btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4CAF50; /* Green Button */
+    color: white;
+    font-size: 16px;
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .get-started-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
+  /* Add styling for PackMate text inside .website-name */
+.navbar-left .website-name {
+  font-size: 30px; /* Slightly increase the font size for a more elegant look */
+  font-weight: 600; /* Semi-bold weight for better emphasis */
+  color: #333; /* Dark grey color for text */
+  font-family: 'Poppins', sans-serif; /* Elegant Google Font */
+  text-decoration: none; /* Remove underline */
+  letter-spacing: 1px; /* Slightly increase the letter spacing for refinement */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.navbar-left .website-name:hover {
+  color: #4A90E2; /* Change to a blue shade on hover for elegance */
+  transform: scale(1.05); /* Slightly scale up on hover for an elegant effect */
+}
+
+/* Navbar container shouldn't overflow */
+.navbar {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent overflow */
+}
+
+/* Ensure that all elements inside the navbar stay within the container */
+.navbar-left, .navbar-center, .navbar-right {
+  box-sizing: border-box;
+}
+
