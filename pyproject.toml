@@ -1,0 +1,67 @@
+[tool.uv.workspace]
+members = ["packages/domain", "apps/api", "evals"]
+
+[tool.uv]
+python-preference = "only-managed"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "mypy>=2.3.1",
+    "pre-commit>=4.6.2",
+    "pre-commit-hooks>=6.0.0",
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.16.8",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+src = ["packages/domain/src", "apps/api/src", "evals/src"]
+extend-exclude = ["Packmate-Frontend", "Packmate-Streamlit", ".tools"]
+
+[tool.ruff.lint]
+select = [
+    "E", "W", "F", "I", "N", "B", "UP", "SIM", "C4", "RUF", "S",
+    "ASYNC", "PT", "T20", "DTZ", "PTH", "TID", "ERA",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"**/tests/**" = ["S101"]
+"evals/suites/**" = ["S101"]
+
+[tool.ruff.lint.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[tool.ruff.lint.isort]
+known-first-party = ["fernweh_domain", "fernweh_api", "fernweh_evals"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_unreachable = true
+explicit_package_bases = true
+mypy_path = ["packages/domain/src", "apps/api/src", "evals/src"]
+plugins = ["pydantic.mypy"]
+files = ["packages/domain", "apps/api", "evals"]
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+init_typed = true
+warn_required_dynamic_aliases = true
+
+[tool.pytest.ini_options]
+addopts = ["--import-mode=importlib", "--strict-markers", "--strict-config", "-ra"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["packages/domain/tests", "apps/api/tests", "evals/tests"]
+
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+exclude_also = ["if TYPE_CHECKING:", "raise NotImplementedError", "\\.\\.\\."]

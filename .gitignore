@@ -1,6 +1,38 @@
-
+# Env and secrets
 .env
 *.env
+.env.*
+!.env.example
 
-.env
-*.env
+# Repo-local toolchains and caches (uv Python, corepack, pnpm store)
+.tools/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+*.egg-info/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+.turbo/
+*.tsbuildinfo
+playwright-report/
+test-results/
+
+# Local data and eval artifacts
+*.db
+*.sqlite
+.deepeval/
+
+# OS / editors
+.DS_Store
+.idea/

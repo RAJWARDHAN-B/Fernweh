@@ -1,0 +1,2 @@
+{"id": "timeout", "input": "weather tool timed out", "actual_output": "{\"code\": \"upstream_timeout\", \"message\": \"Weather service timed out.\", \"retryable\": true}"}
+{"id": "guard", "input": "prompt injection attempt", "actual_output": "{\"code\": \"guard_rejected\", \"message\": \"Request was blocked by a safety check.\", \"request_id\": \"req-1\"}"}

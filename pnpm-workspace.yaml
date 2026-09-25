@@ -1,0 +1,9 @@
+packages:
+  - apps/web
+
+# Keep the package store inside the repo instead of the user-global location.
+storeDir: .tools/pnpm-store
+
+allowBuilds:
+  # Only a fallback downloader; the native binding ships as an optional dependency.
+  unrs-resolver: false

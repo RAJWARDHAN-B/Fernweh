@@ -102,12 +102,22 @@ The existing code is valuable as a reference for the packing portion of Fernweh.
 
 ```text
 Fernweh/
-├── Packmate-Frontend/
-│   └── codathon-PackMate-main/    # Legacy React concept site
-├── Packmate-Streamlit/
-│   └── packmate-main/             # Legacy Streamlit and FastAPI packing prototype
-└── README.md                       # Fernweh vision and rebuild plan
+├── apps/
+│   ├── api/                       # FastAPI + LangGraph orchestration + guardrails
+│   └── web/                       # Next.js frontend
+├── packages/domain/               # Shared Pydantic domain contracts
+├── mcp-servers/                   # One MCP server per domain
+├── evals/                         # DeepEval datasets and suites
+├── infra/                         # docker-compose and deployment config
+├── docs/                          # Architecture, quality gates, ADRs
+├── Packmate-Frontend/             # Legacy React concept site (removed after MVP)
+├── Packmate-Streamlit/            # Legacy Streamlit/FastAPI prototype (removed after MVP)
+├── PLAN.md                        # Phased implementation plan and progress
+├── AGENTS.md                      # Coding-agent and engineering standards
+└── CONTRIBUTING.md                # Setup, workflow, and PR checklist
 ```
+
+See [PLAN.md](PLAN.md) for build order, [docs/quality-gates.md](docs/quality-gates.md) for the tests → DeepEval → guardrails requirements, and [docs/adr/0001-tech-stack.md](docs/adr/0001-tech-stack.md) for the confirmed stack.
 
 ## Near-Term Priorities
 
